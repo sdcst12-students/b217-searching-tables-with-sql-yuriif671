@@ -74,7 +74,7 @@ total_warriors = cursor.fetchone()[0]
 print(f'\n[bold]Percentage of Warriors among fighter classes:[/bold] {((total_warriors / total_fighters) * 100):.2f}%')
 
 # 11. What is the average hitpoints per level of the npc's that are level 10 or higher?
-cursor.execute("SELECT AVG(hp / level) FROM npc WHERE level >= 10")
+cursor.execute("SELECT AVG(hp * 1.0 / level) FROM npc WHERE level >= 10")
 print(f'\n[bold]Avg hp per level for npcs level 10 and up:[/bold] {cursor.fetchone()[0]:.2f}')
 
 
